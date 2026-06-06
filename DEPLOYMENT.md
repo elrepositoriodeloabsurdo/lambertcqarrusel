@@ -1,0 +1,143 @@
+# 🚀 Deployment Guide - Lambert Coffee Store
+
+## Quick Deploy Options
+
+### **Option 1: Vercel (Recommended - Fastest)**
+Perfect for quick demos and production-ready deployments.
+
+1. **Create GitHub Repository:**
+   ```bash
+   cd your-project-folder
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/lambert-coffee.git
+   git push -u origin main
+   ```
+
+2. **Deploy to Vercel:**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up with GitHub
+   - Click "New Project"
+   - Select your repository
+   - Environment variables will be auto-detected
+   - Click "Deploy"
+   - Share the live URL with your client!
+
+**Vercel Pros:**
+- ✅ Instant automatic deployments when you push to GitHub
+- ✅ Free tier perfect for demos
+- ✅ Custom domain support
+- ✅ Serverless functions (if you need backend later)
+- ✅ Environment variables in dashboard
+
+---
+
+### **Option 2: Netlify (Alternative)**
+Similar to Vercel, also excellent for React apps.
+
+1. Go to [netlify.com](https://netlify.com)
+2. Click "Add new site" → "Import an existing project"
+3. Select GitHub
+4. Choose your repository
+5. Build settings auto-filled (Vite detected)
+6. Add environment variables
+7. Deploy
+
+---
+
+### **Option 3: Build & Host Manually**
+
+If you want to host on your own server or use another service:
+
+```bash
+# Build the project
+npm run build
+
+# The dist/ folder contains your production build
+# Upload the contents of dist/ to any static hosting
+```
+
+---
+
+## Environment Variables Setup
+
+**In Vercel Dashboard:**
+1. Go to Project Settings → Environment Variables
+2. Add each variable:
+   - `VITE_WHATSAPP_NUMBER` = Your WhatsApp number (without +)
+   - `VITE_TUU_CHECKOUT_URL` = Your Tuu checkout link (optional)
+   - `VITE_TRANSBANK_CHECKOUT_URL` = Your Transbank link (optional)
+
+---
+
+## Pre-Deployment Checklist
+
+- [ ] Update `VITE_WHATSAPP_NUMBER` in `.env.local` with real number
+- [ ] Test locally: `npm run dev`
+- [ ] Check build: `npm run build`
+- [ ] Preview build: `npm run preview`
+- [ ] Remove sensitive data from git
+- [ ] Ensure `.gitignore` includes `.env.local`
+
+---
+
+## Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server (accessible at http://localhost:3000)
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+---
+
+## After Deployment
+
+1. **Share URL with client:** https://your-vercel-app.vercel.app
+2. **Custom domain:** (Paid Vercel plan)
+3. **SSL/HTTPS:** Automatic with Vercel
+4. **Analytics:** Available in Vercel dashboard
+
+---
+
+## Troubleshooting
+
+**Build fails:**
+- Check Node version compatibility (v16+)
+- Verify all dependencies in package.json
+- Check environment variables are set
+
+**Site looks broken:**
+- Clear browser cache
+- Check Vite build output in `dist/`
+- Verify public assets path in vite.config.ts
+
+---
+
+## Quick Start Commands
+
+```bash
+# One-time setup
+npm install
+
+# For development/testing
+npm run dev
+
+# Before deploying
+npm run build && npm run preview
+
+# Clean up
+npm run clean
+```
+
+Enjoy! 🎉

@@ -1,0 +1,6 @@
+{
+  "name": "Lambert Coffee",
+  "description": "Tienda de café premium con variedades de Colombia, Brasil y Blends, además de insumos para la preparación y consumo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
